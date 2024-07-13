@@ -132,7 +132,7 @@ def clasificar_sueldos():
     
     print("\n*** Sueldos menores a $800.000 ***")
     print(f"TOTAL: {len(menores_800000)}")
-    for sueldo in menores_800000.items():
+    for sueldo, monto in menores_800000.items():
         print(f"{sueldo: <20} ${monto: >10,}")
     
     print("\n*** Sueldos entre $800.000 y $2.000.000 ***")
