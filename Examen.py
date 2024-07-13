@@ -174,10 +174,10 @@ def reporte_sueldos():
         sueldo_liquido = sueldo_base - descuento_salud - descuento_afp
         descuentos.append([trabajador, sueldo_base, descuento_salud, descuento_afp, sueldo_liquido])
     
-    print(f"\n{'Nombre Empleado':<20} {'Sueldo Base':<15} {'Descuento Salud':<15} {'Descuento AFP':<15} {'Sueldo Líquido':<15}")
+    print(f"\n| {'Nombre Empleado':<20} | {'Sueldo Base':<15} | {'Descuento Salud':<15} | {'Descuento AFP':<15} | {'Sueldo Líquido':<15} |")
     for d in descuentos:
-        print(f"{d[0]:<20} ${d[1]:<14,} ${d[2]:<14,.0f} ${d[3]:<14,.0f} ${d[4]:<14,.0f}")
-    
+        print(f"| {d[0]:<20} | ${d[1]:<14,} | ${d[2]:<14,.0f} | ${d[3]:<14,.0f} | ${d[4]:<14,.0f} |")
+            
     with open('reporte_sueldos.csv', 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(["Nombre Empleado", "Sueldo Base", "Descuento Salud", "Descuento AFP", "Sueldo Líquido"])
